@@ -48,7 +48,7 @@
 
   users.users.powerm1nt = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" ];
+     extraGroups = [ "wheel" "networkmanager" "docker" ];
      packages = with pkgs; [
        firefox
        vesktop
@@ -56,8 +56,11 @@
        vscode
        spicetify-cli
        gnome.gnome-tweaks
+       nixpkgs-fmt
      ];
   };
+
+   virtualisation.docker.enable = true;
 
    environment.systemPackages = with pkgs; [
     neovim
